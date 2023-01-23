@@ -1,0 +1,174 @@
+a {
+  color: black;
+  text-decoration: none;
+}
+h2 {
+  text-align: center;
+  padding: 20px 0px 20px 0px;
+  font-size: medium;
+}
+h3 {
+  font-size: smaller;
+  font-weight: normal;
+}
+table{
+  font-size: 12px;
+}
+th {
+ text-align: left;
+ padding: 5px 0px 5px 0px;
+ border-bottom: 1px solid rgb(185, 185, 185);
+}
+.Productcolor{
+  width: 17px;
+  height: 3px;
+  border: 0px;
+  margin-right: 2px;
+}
+.price{
+  height: 48px;
+  font-size: 14px;
+}
+.Icon{
+  height: 40px;
+}
+.blank{
+  height: 80px;
+}
+body{
+  width: 1440px;
+  display: grid;
+  grid-template-rows: 280px 550px 340px 1200px 320px 1200px 300px;
+  grid-template-columns: 1285px;
+  margin: 0 155px 0 155px;
+}
+#header {
+  grid-row-start: 1;
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr;
+}
+#wrap {
+  grid-row-start: 2;
+  width: 1285px;
+  height: 510px;
+}
+#rolling {
+  grid-row-start: 3;
+  display: grid;
+  grid-template-columns: 965px 320px;
+}
+#Best6 {
+  grid-row-start: 4;
+}
+#banner{
+  grid-row-start: 5;
+  width: 1285px;
+  height: 290px;
+  padding: 15px 0px 15px 0px;
+}
+#New8 {
+  grid-row-start: 6;
+}
+#footer{
+  grid-row-start: 7;
+  font-size: 12px;
+  line-height: 28px;
+}
+
+#TopMenu{
+  display: grid;
+  grid-template-columns: 885px repeat(5, 80px);
+  font-size: 10px;
+  text-align: right;
+}
+#TopMenu >ul {
+  text-align: left;
+  padding: 0;
+}
+#TopMenu >a {
+  display: block;
+  text-align: center;
+  margin-top: 13px;
+}
+#logo {
+  display: block;
+  margin:  auto;
+  height: 120px;
+}
+#menu {
+  border-top: 1px solid black;
+  border-bottom: 1px solid gray;
+  display: grid;
+  grid-template-columns: 965px 320px;
+  padding: 14px 0px 14px 0px;
+  margin: auto;
+}
+#LeftMenu >a, .dorpdown{
+  margin-right: 16px;
+}
+#RightMenu >a{
+  margin-left: 16px;
+}
+#LeftMenu >a, #RightMenu >a, .dorpdown >a{
+  font-size:14px;
+  padding: 0 6px 0 6px;
+}
+#LeftMenu :first-child, #RightMenu :last-child{
+  color: red;
+  padding: 0px;
+}
+#RightMenu{
+  display: block;
+  text-align: right;
+}
+
+#rollingProduct >img{
+  width: 180px;
+  height: 234px;
+}
+#notice >img {
+  width: 320px;
+  height: 160px;
+  padding-top: 30px;
+}
+.ProductImages >img{
+  width: 395px;
+  height: 300px;
+}
+#footerMenu{
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding: 14px 0px 14px 0px;
+  margin: 180px 0px 40px 0px;
+}
+#footerMenu >a{
+  padding: 6px;
+  font-size:13px;
+  margin-right: 16px;
+}
+.Hover a:hover{
+  color: gray;
+}
+
+.dorpdown{
+  position: relative;
+  display:inline-block;
+  border: 1px solid black;
+}
+.dorpdown >a{
+  text-align: center;
+}
+.dpContent{
+  display: none;
+  position: absolute;
+  z-index: 1; /* 다른 요소보다 앞에 배치 */
+  background-color: white;
+  border: 1px solid rgb(185, 185, 185);
+  padding: 8px 15px 8px 15px;
+}  
+.dpContent a{
+  display: block;
+}
+.dorpdown:hover .dpContent{
+  display: block;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>끝말잇기</title>
+</head>
+
+<body>
+  <div id="mainTemlate" style="display: block;">
+    <h2><span id="playTime">1</span> 회차</h2>
+    <div>Player : <span id="order">1</span></div>
+    <div>제시어: <span id="word"></span></div>
+    <input type="text">
+    <button>입력</button>
+    <div>입력: <span id="answer"></span></div>
+
+  </div>
+
+  <script>
+    let number = Number(prompt('몇 명이 참가하나요?'));
+    const $input = document.querySelector('input');
+    const $button = document.querySelector('button');
+    const $word = document.querySelector('#word');
+    const $order = document.querySelector('#order');
+    const $answer = document.querySelector('#answer');
+    const $playTime = document.querySelector('#playTime');
+    const playTime = Number($playTime.textContent);
+    const $mainTemlate = document.querySelector('#mainTemlate');
+    let word;
+    let newWord;
+    let answer = [];
+
+    const onClickButton = () => {
+      if (answer.includes(newWord) == false && (!word || word[word.length - 1] === newWord[0])) {
+        word = newWord.trim();//공백제거
+        $word.textContent = word;
+
+        const order = Number($order.textContent);
+        if (order + 1 > number) {
+          $order.textContent = 1;
+        } else {
+          $order.textContent = order + 1;
+        }
+        answer.push(word);
+        $answer.textContent += word + "-";
+
+      } else {
+        if (answer.includes(newWord) == true) {
+          alert("중복된 단어입니다.\n"
+            + $order.textContent + "번 사용자는 패배했습니다.");
+        } else {
+          alert("올바르지 않은 단어입니다.\n"
+            + $order.textContent + "번 사용자는 패배했습니다.");
+        }
+
+
+        let reGame = confirm("게임이 다시 실행할까요?")
+
+        $word.textContent = '';
+        $answer.textContent = '';
+        $order.textContent = 1;
+        word = null;
+        answer = [];
+
+        if (reGame === true) {
+          $playTime.textContent = playTime + 1;
+
+        } else {
+          alert("게임이 종료됩니다.");
+          $playTime.textContent = 1;
+          $mainTemlate.style.display = 'none';
+        }
+
+      }
+      $input.value = '';
+      $input.focus();
+    };
+    const onInput = (event) => {
+      newWord = event.target.value;
+    };
+    $button.addEventListener('click', onClickButton);
+    $input.addEventListener('input', onInput);
+
+  </script>
+</body>
+
+</html>

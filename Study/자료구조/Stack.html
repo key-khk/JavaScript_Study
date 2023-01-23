@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>스택(stack)활용</title>
+</head>
+<body>
+  <h4>*짝수는 추가, 홀수는 삭제*</h4>
+  <h1>1. 스택(Stack)활용</h1>
+  <script>
+    let arrStack=[];
+    for (let i = 1; i <= 10; i++) {
+      arrStack.push(i);
+      if(i%2!==0) {
+        arrStack.pop()
+      };
+    }
+    document.write("<h3>"+arrStack+"</h3>");
+  </script>
+</body>
+</html>

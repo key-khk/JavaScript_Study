@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+  <meta charset='UTF-8'>
+  <title>study Time</title>
+</head>
+<body>
+  <script>
+    let rowNum = prompt('세로(열) 줄?',);
+    let colNum = prompt('가로(행) 줄?',);
+    let redTable = document.getElementsByClassName('redTable')
+
+    document.write('<table>');
+      for (let i = 1; i <= rowNum; i++) {
+        document.write('<tr>')
+        for (let j = 1; j <= colNum; j++) {     
+          if (i!=j) {
+            document.write('<td>'+i+':'+j+'</td>');                
+          } else {
+            document.write('<td class="redTable">'+i+':'+j+'</td>');
+          }
+        }
+        document.write('</tr>');
+      }
+    document.write('</table>');
+  </script>
+
+  <style>
+    table, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    td{
+      text-align: center;
+      color: black;
+      padding: 5px;
+      font-size: large;
+    }
+    .redTable{
+      background-color: red;
+    }
+  </style>
+</body>
+</html>

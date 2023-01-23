@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>계산기</title>
+  <style>
+    * {
+      box-sizing: border-box
+    }
+
+    button {
+      width: 50px;
+      height: 50px;
+      margin: 5px
+    }
+
+    li {
+      list-style-type: none;
+    }
+    
+    #result {
+      width: 180px;
+      height: 50px;
+      margin: 5px;
+      text-align: right
+    }
+
+    #operator {
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+      text-align: center
+    }
+
+    .sub_content {
+      float: left;
+      width: 300px;
+      height: 300px;
+    }
+
+    .overflow {
+      overflow: auto;
+    }
+  </style>
+</head>
+
+<!-- 계산기 버튼 구현 -->
+
+<body>
+  <div class="sub_content">
+    <input readonly id="operator">
+    <input readonly type="number" id="result">
+    <div class="row">
+      <button id="num-7">7</button>
+      <button id="num-8">8</button>
+      <button id="num-9">9</button>
+      <button id="plus">+</button>
+    </div>
+    <div class="row">
+      <button id="num-4">4</button>
+      <button id="num-5">5</button>
+      <button id="num-6">6</button>
+      <button id="minus">-</button>
+    </div>
+    <div class="row">
+      <button id="num-1">1</button>
+      <button id="num-2">2</button>
+      <button id="num-3">3</button>
+      <button id="divide">/</button>
+    </div>
+    <div class="row">
+      <button id="clear">C</button>
+      <button id="num-0">0</button>
+      <button id="calculate">=</button>
+      <button id="multiply">x</button>
+    </div>
+  </div>
+  <div class="sub_content overflow">
+    <ul id="calcHistory">
+    </ul>
+  </div>
+  <script>
+    let numOne = '';
+    let prevOperator = '';
+    let currOperator = '';
+    let numTwo = '';
+    const $operator = document.querySelector('#operator');
+    const $result = document.querySelector('#result');
+
+    let opertorEvent = {
+      plus: '+',
+      minus: '-',
+      divide: '/',
+      multiply: '*'
+    }
+
+    const onClickNumber = (event) => {
+      if (!currOperator) {
+        numOne += event.target.textContent;
+        $result.value += event.target.textContent;
+        return;
+      }
+
+      if (!numTwo) {
+        $result.value = '';
+      }
+      numTwo += event.target.textContent;
+      $result.value += event.target.textContent;
+    }
+
+    const onKeyDownNumber = (num) => {
+      if (!currOperator) {
+        numOne += num;
+        $result.value += num;
+        return;
+      }
+
+      if (!numTwo) {
+        $result.value = '';
+      }
+      numTwo += num;
+      $result.value += num;
+    }
+
+
+    for (let i = 0; i < 10; i++) {
+      document.querySelector('#num-' + i).addEventListener('click', onClickNumber);
+    }
+
+    const onClickOperator = (event) => {
+      //리펙토링
+      let eventChk = event.isTrusted;
+      let op = event;
+      if (eventChk != undefined) {
+        op = opertorEvent[event.target.id];
+      }
+
+      if (numOne) {
+        if (numTwo) {
+          prevOperator = currOperator;
+          currOperator = op;
+        } else {
+          currOperator = op;
+        }
+
+        $operator.value = op;
+      } else {
+        alert('숫자를 먼저 입력하세요.');
+      }
+
+      if (numTwo) {
+        calculateButton('op', op);
+      }
+    }
+
+
+    for (let op in opertorEvent) {
+      document.querySelector('#' + op).addEventListener('click', onClickOperator);
+    }
+
+    document.querySelector('#calculate').addEventListener('click', claculateResult);
+    function claculateResult() {
+      if (numTwo) {
+        calculateButton('calc', '');
+      } else {
+        alert('숫자를 먼저 입력하세요');
+      }
+    }
+
+
+    document.querySelector('#clear').addEventListener('click', clearResult);
+
+    function clearResult() {
+      numOne = '';
+      currOperator = '';
+      prevOperator = '';
+      numTwo = '';
+      $operator.value = '';
+      $result.value = '';
+    }
+
+    document.addEventListener('keydown', (event) => {
+      // console.log(event);
+      let keyNum = isNaN(parseInt(event.key)) ? -1 : parseInt(event.key);
+      if (keyNum >= 0 && keyNum < 10) {
+        onKeyDownNumber(event.key);
+      } else {
+        switch (event.key) {
+          case '+':
+          case '-':
+          case '*':
+          case '/':
+            onClickOperator(event.key);
+            break;
+          case '=':
+          case 'Enter':
+            claculateResult()
+            break;
+          case 'Escape':
+            clearResult();
+            break;
+          default:
+            break;
+        }
+      }
+    })
+
+    function calculateButton(type, opType) {
+      let tmpOperator = currOperator;
+      if (type == 'op') {
+        tmpOperator = prevOperator;
+      }
+      let isWrite = true;//예외적 상황 대응용
+      switch (tmpOperator) {
+        case '+':
+          $result.value = parseInt(numOne) + parseInt(numTwo);
+          break;
+        case '-':
+          $result.value = numOne - numTwo;
+          break;
+        case '*':
+          $result.value = numOne * numTwo;
+          break;
+        case '/':
+          $result.value = numOne / numTwo;
+          break;
+        default:
+          isWrite = false;//
+          break;
+      }
+
+      if (isWrite) {//
+        writeCalculatorHistory(numOne, numTwo, tmpOperator, $result.value);
+      }
+
+      $operator.value = '';
+      numOne = $result.value;
+      numTwo = '';
+
+      if (type == 'calc') {
+        currOperator = '';
+      } else {
+        prevOperator = currOperator;
+      }
+
+      if (numOne) {
+        currOperator = opType;
+        $operator.value = opType;
+      }
+    }
+
+    function writeCalculatorHistory(numOne, numTwo, op, result) {
+      const li = document.createElement("li");
+      li.setAttribute('class', 'calcHistory_li');
+      const textNode = document.createTextNode(`${numOne} ${op} ${numTwo} = ${result}`);
+      li.appendChild(textNode); //역순으로 올라가게 
+      document.getElementById('calcHistory').appendChild(li);
+    }
+  </script>
+</body>

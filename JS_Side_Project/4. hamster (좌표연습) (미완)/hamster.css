@@ -1,0 +1,40 @@
+body {
+  height:2000px; 
+  display: flex;
+}
+
+#field {
+background-image: url("톱밥.jpg");
+width: 420px;
+height: 430px;
+border-top: 10px solid #9b6e44;
+border-right: 10px solid #d8a47d;
+border-bottom: 10px solid #d8a47d;
+border-left: 10px solid #9b6e44;
+position: relative;
+overflow: hidden;
+cursor: pointer;
+}
+#coords{
+display: block;
+width: 430px;
+text-align: right;
+}
+#hamster {
+position: absolute;
+left: 0;
+top: 0;
+width: 60px;
+height: 80px;
+transition: all 1.5s;
+}
+
+.selected {
+  background-color: chocolate;
+  font-weight: bold;
+}
+
+li {
+  /* cursor: url("\acornCursor.cur"); */
+  cursor: pointer;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Background Changer</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+    // hexNumbers Javascript
+    var hexNumbers = ['A','B','C','D','E','F'];
+    for (let i = 0; i < 10; i++) {
+      hexNumbers.push (i); // 0~9까지 숫자 추가
+    }
+    function backgroundChager(self){
+      let result = "#";
+      for (var i = 0; i < 6; i += 1) {
+        const randomIndex = Math.floor(Math.random() * hexNumbers.length);
+        result += hexNumbers[randomIndex];
+      }
+      console.log(result);
+      document.getElementById("colorName").innerHTML = "HEX COLOR : " + result;  // HTML Hex color 표시될 것
+      document.body.style.backgroundColor = result;  // 배경색
+      return result;
+    }
+    </script>
+  </head>
+  <body>
+    <span id = 'colorName'>HEX COLOR : </span>
+    <input type="button" value="CLICK ME" onclick="backgroundChager(this);">
+  </body>
+</html>

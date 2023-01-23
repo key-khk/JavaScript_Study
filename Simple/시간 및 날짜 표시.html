@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>2022-04-27숙제</title>
+</head>
+<body>
+  <form action="date">
+    <ul>
+      <li>
+        <label for="EnterDate">날짜를 입력해주세요.</label>
+        <input type="date" id="EnterDate">
+        <input type="time" id="EnterTime" value="00:00:01">
+        <button onclick="ShowDate()">날짜 출력</button>
+      </li>
+    </ul>
+  </form>
+  
+  <script>
+    function ShowDate() {
+      var EnterDate = new Date(document.getElementById('EnterDate').value);
+      var EnterTime = document.getElementById('EnterTime').value;
+      var yyyy = EnterDate.getFullYear();
+      var mm = ("0"+ (EnterDate.getMonth()+1).toString()).slice(-2);
+      var dd = ("0"+ EnterDate.getDate()).slice(-2);
+      var HH = EnterTime.split(":")[0];
+      var MM = EnterTime.split(":")[1];
+      var SS = EnterTime.split(":")[2];
+      var Dateform1 = yyyy + "/" + mm + "/" + dd;
+      var Dateform2 = yyyy + mm + dd;
+      var Dateform3 = yyyy+"/"+mm+"/"+dd+"//"+HH+":"+MM+":"+SS;
+      alert(Dateform1+"\n\n"+Dateform2+"\n\n"+Dateform3); 
+    }
+  </script>
+</body>
+</html>

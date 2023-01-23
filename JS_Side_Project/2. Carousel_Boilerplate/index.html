@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Carousel Project</title>
+  </head>
+
+  <body>
+    <section>
+      <div class="image-box">
+        <img src="images/logo.png" />
+      </div>
+      <h1>Carousel</h1>
+      <!-- Carousel Start -->
+      <div class="main">
+        <div class="mainImg">
+          <img id="img-1" src="images\image-1.jpg" class="active">
+          <img id="img-2" src="images\image-2.jpg">
+          <img id="img-3" src="images\image-3.jpg">
+          <img id="img-4" src="images\image-4.jpg">
+          <img id="img-5" src="images\image-5.jpg">
+        </div>
+        <input id="next" type="button" value="&gt;" onclick="next()">
+        <input id="prev" type="button" value="&lt;" onclick="prev()">
+        <div class="Dots">
+          <button onclick = "dot(1)"></button>
+          <button onclick = "dot(2)"></button>
+          <button onclick = "dot(3)"></button>
+          <button onclick = "dot(4)"></button>
+          <button onclick = "dot(5)"></button>
+        </div>
+      </div>
+
+      <!-- Carousel End -->
+    </section>
+
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+body {
+  background-image: url("./images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Varela Round", sans-serif;
+}
+
+h1 {
+  font-family: "Pacifico", cursive;
+  text-align: center;
+  font-size: 72px;
+}
+
+.main{
+  display: grid;
+  grid-template-columns: 80px 1fr 80px;
+  grid-template-rows: 1fr 50px;
+  background-color: #3598dc;
+  height: 600px;
+  margin: 5%;
+  padding: 2%
+}
+
+#prev{
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+.mainImg{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  position: relative;
+}
+.mainImg img{
+  position: relative;
+  width: 100%;
+  height : 550px;
+  display: none;
+}
+
+.mainImg .active{
+  display: block;
+}
+
+#next{
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
+}
+
+#prev, #next{ /*양 옆 버튼 */
+  display: block;
+  font-size: 40px;
+  text-align: center;
+  height: 35px;
+  width: 35px;
+  color: #3397db;
+  border: solid 0px;
+  border-radius: 45px;
+  margin-top: 250px;
+  margin-left: 20%;
+  line-height: 35px;
+}
+
+.Dots{ /*하단 버튼 모음 */
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  text-align: center;
+  margin-top: 25px;
+}
+.Dots button { /*각 버튼*/
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 0px;
+  background-color: gray;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.Dots button:nth-child(1){
+  background-color: black;
+}

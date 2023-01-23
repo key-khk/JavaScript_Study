@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="1.css">
+  <script scr="1.js"></script>
+  <title>쇼핑몰 따라해보기</title>
+</head>
+<body>
+  <div id="header">
+    <div id="TopMenu"> <!-- 상단 로그인 및 검색 -->
+      <ul>
+        <li style="list-style-type: none;">
+          <label for="AddBookmark">ADD BOOKMARK</label>
+          <input type="text" id="AddBookmark">
+          <input type="button" value="">
+        </li>
+      </ul>
+      <a href="">LOGIN</a>
+      <a href="">JOIN US</a>
+      <a href="">ORDER</a>
+      <a href="">CART</a>
+      <a href="">WISH LIST</a>
+    </div>
+    <img src="images\logo.png" alt="logo" id="logo"> <!-- 로고 -->
+    <div id="menu"> <!-- 주요 메뉴 -->
+      <div id="LeftMenu" class="Hover">
+        <a href="">BEST ITEM</a>
+        <a href="">NEW SALE 5%</a>
+        <div class="dorpdown">
+          <a href="">OUTER</a>
+          <div class="dpContent">
+            <a href="">Jacket</a>
+            <a href="">Coat</a>
+            <a href="">Biazer</a>
+          </div>
+        </div>
+        <div class="dorpdown">
+          <a href="">TOP</a>
+          <div class="dpContent">
+            <a href="">Tee</a>
+            <a href="">Shirt</a>
+          </div>
+        </div>
+        <a href="">DRESS</a>
+        <div class="dorpdown">
+          <a href="">BOTTOM</a>
+          <div class="dpContent">
+            <a href="">Skirt</a>
+            <a href="">Pants</a>
+          </div>
+        </div>
+        <a href="">SHOESE & BAG</a>
+        <a href="">ACCESSORY</a>
+        <a href="">SALE</a>
+      </div>
+      <div id="RightMenu" class="Hover">
+        <a href="">NOTICE</a>
+        <a href="">REVIEW</a>
+        <a href="">Q&A</a>
+        <a href="">EVENT</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container" id="WrapLRbutton">
+    <img src="images\wrap1.png" id="wrap">
+    <div id="rolling">
+      <div id="rollingProduct">
+        <h3>WEEKLY BEST ITEM</h3>
+        <img src="images\product-1.png">
+        <img src="images\product-2.png">
+        <img src="images\product-3.png">
+        <img src="images\product-4.png">
+        <img src="images\product-5.png">
+        <!-- <img src="images\product-6.png">
+        <img src="images\product-7.png">
+        <img src="images\product-8.png">  -->
+      </div>
+      <div id="notice">
+        <table style="font-size: 8px;">
+          <colgroup>
+            <col style="width: 285px;">
+          </colgroup>
+          <h3>NOTICE</h3>
+          <tr>
+            <td class="Hover"><a href="">>세렌디자인, 오픈 기념 특가 세일중!</a></td>
+            <td>09-21</td>
+          </tr>
+          <tr>
+            <td class="Hover"><a href="">>영문몰, 중문몰, 일문몰 쇼핑몰 제작가능합니다.</a></td>
+            <td>09-21</td>
+          </tr>
+          <tr>
+            <td class="Hover"><a href="">>[공지] 최신 소스 업데이트 완료!!</a></td>
+            <td>09-21</td>
+          </tr>
+        </table>
+        <img src="images\insta.png">
+      </div>
+  </div>
+  <div id="Best6">
+    <h2>BEST ITEM</h2>
+    <table>
+      <tr>
+        <td class="ProductImages"><img src="images\product-1.png"></td>
+        <td style="width: 50px;"></td>
+        <td class="ProductImages"><img src="images\product-2.png"></td>
+        <td style="width: 50px;"></td>
+        <td class="ProductImages"><img src="images\product-3.png"></td>
+      </tr>
+      <tr>
+        <th class="ProductName">[1+1] 마일드 세렌-가디건</th><!--  product-1 이름 -->
+        <td></td>
+        <th class="ProductName">[당일발송] 바론 브이넥 반팔-니트</th><!--  product-3 이름 -->
+        <td></td>
+        <th class="ProductName">바닐라 트렌치-코트</th><!--  product-2 이름 -->
+      </tr>
+      <tr> <!--  product-1 색상 -->
+        <td>
+          <input type="button" class="Productcolor" style="background-color: #363636;">
+          <input type="button" class="Productcolor" style="background-color: #00B3FF;">
+          <input type="button" class="Productcolor" style="background-color: #FF69B4;">
+          <input type="button" class="Productcolor" style="background-color: #81FB82;">
+        </td>
+        <td></td>
+        <td>
+          <input type="button" class="Productcolor" style="background-color: #363636;">
+          <input type="button" class="Productcolor" style="background-color: #00B3FF;">
+          <input type="button" class="Productcolor" style="background-color: #FF69B4;">
+          <input type="button" class="Productcolor" style="background-color: #81FB82;">
+        </td>
+        <td></td>
+        <td>
+          <input type="button" class="Productcolor" style="background-color: #363636;">
+          <input type="button" class="Productcolor" style="background-color: #00B3FF;">
+          <input type="button" class="Productcolor" style="background-color: #FF69B4;">
+          <input type="button" class="Productcolor" style="background-color: #81FB82;">
+        </td>
+      </tr>
+      <tr class="price">
+        <td><span style="text-decoration: line-through;">80,000원</span><br>72,000원</td><!--  product-1 가격 -->
+        <td></td>
+        <td><span style="text-decoration: line-through;">80,000원</span><br>68,000원</td><!--  product-2 가격 -->
+        <td></td>
+        <td><span style="text-decoration: line-through;">80,000원</span><br>64,000원</td><!--  product-3 가격 -->
+      </tr>
+      <tr>
+        <td>간절기시즌과 잘 어울리는 컬러웨이로 소장가치 UP♥</td> <!--  product-1 설명 -->
+        <td></td>
+        <td>간절기 필수! 자주 손이가는 브이넥 니트:)</td> <!--  product-2 설명 -->
+        <td></td>
+        <td>후기최고! 꾸준히 사랑받는 데일리한 트렌치코트♡</td> <!--  product-3 설명 -->
+      </tr>
+      <tr class="Icon">
+        <td> <!--  product-1 행사 -->
+          <span style="background-color: black; color: #d2d2d2;">5%DC</span>
+          <span style="background-color: #7ba0fe;color: white;">BEST</span>
+        </td>
+        <td></td>
+        <td>
+          <span style="background-color: #434343; color: #c6c6c6;">UP</span>
+          <span style="background-color: #fe7b91; color: #fecfd7;">WE MADE</span>
+        </td>
+        <td></td>
+        <td>
+          <span style="background-color: #fd294c; color: white;">HIT</span>
+          <span style="background-color: #bcc2dd; color: white;">HOT SALE</span>
+        </td>
+      </tr>
+      <tr class="blank"></tr>
+      <tr>
+        <td class="ProductImages"><img src="images\product-4.png"></td>
+        <td></td>
+        <td class="ProductImages"><img src="images\product-5.png"></td>
+        <td></td>
+        <td class="ProductImages"><img src="images\product-6.png"></td>
+      </tr>     
+      <tr>
+        <th class="ProductName">감각적 슬랙스-슈즈 (당일발송)</th><!--  product-4 이름 -->
+        <td></td>
+        <th class="ProductName">베이직 D라인 미니 슈즈커트 (주문폭주)</th><!--  product-5 이름 -->
+        <td></td>
+        <th class="ProductName">패턴작살-커브드 체크무늬</th><!--  product-6 이름 -->
+      </tr>
+      <tr> <!--  product-4 색상 -->
+        <td>
+          <input type="button" class="Productcolor" style="background-color: #363636;">
+          <input type="button" class="Productcolor" style="background-color: #00B3FF;">
+          <input type="button" class="Productcolor" style="background-color: #FF69B4;">
+          <input type="button" class="Productcolor" style="background-color: #81FB82;">
+        </td>
+        <td></td>
+        <td>
+          <input type="button" class="Productcolor" style="background-color: #363636;">
+          <input type="button" class="Productcolor" style="background-color: #00B3FF;">
+          <input type="button" class="Productcolor" style="background-color: #FF69B4;">
+          <input type="button" class="Productcolor" style="background-color: #81FB82;">
+        </td>
+        <td></td>
+        <td>
+          <input type="button" class="Productcolor" style="background-color: #363636;">
+          <input type="button" class="Productcolor" style="background-color: #00B3FF;">
+          <input type="button" class="Productcolor" style="background-color: #FF69B4;">
+          <input type="button" class="Productcolor" style="background-color: #81FB82;">
+        </td>
+      </tr>
+      <tr class="price">
+        <td><span style="text-decoration: line-through;">80,000원</span><br>72,000원</td><!--  product-4 가격 -->
+        <td></td>
+        <td><span style="text-decoration: line-through;">80,000원</span><br>64,000원</td>
+        <td></td>
+        <td><span style="text-decoration: line-through;">80,000원</span><br>56,000원</td>
+      </tr>
+      <tr>
+        <td>슬림하게 떨어지는 일자핏 메이드 슬랙스 :)</td> <!--  product-4 설명 -->
+        <td></td>
+        <td>스판이 함유되어 쫀쫀하고 짱짱하게 착용 가능해요!</td>
+        <td></td>
+        <td>톤다운된 컬러감과 고급스러운 체크패턴의 롱 스커트!</td>
+      </tr>
+      <tr class="Icon">
+        <td> <!--  product-4 행사 -->
+          <span style="background-color: #ff2a4e; color: white;">SOLD OUT</span>
+        </td>
+        <td></td>
+        <td>
+          <span style="background-color: black; color: white;">20% SALE</span>
+          <span style="background-color: black; color: white;">BEST</span>
+        </td>
+        <td></td>
+        <td>
+          <span style="color: black; border: 1px solid black;">10% SALE</span>
+          <span style="background-color: #444444; color: white;">DELAY</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <img src="images\banner.png" alt="배너_이미지" id="banner">
+  <div id="NEW8">
+    <h2>NEW ARRIVALS</h2>
+    <table>
+      <tr>
+        <td class="NewProductImages"><img src="images\product-3.png"></td>
+        <td></td>
+        <td class="NewProductImages"><img src="images\product-1.png"></td>
+        <td></td>
+        <td class="NewProductImages"><img src="images\product-2.png"></td>
+        <td></td>
+        <td class="NewProductImages"><img src="images\product-4.png"></td>
+      </tr>
+      <tr>
+        <th class="ProductName">바닐라 트렌치-코트</th><!--  product-1 이름 -->
+        <td></td>
+        <th class="ProductName">[1+1] 마일드 세렌-가디건</th>
+        <td></td>
+        <th class="ProductName">[당일발송] 바론 브이넥 반팔-니트</th>
+        <td></td>
+        <th class="ProductName">감각적 슬랙스-슈즈 (당일발송)</th>
+      </tr>
+      <tr> 
+        <td><!--  product-1 색상 -->
+          <input type="button" class="Productcolor" style="background-color: #363636;">
+          <input type="button" class="Productcolor" style="background-color: #00B3FF;">
+          <input type="button" class="Productcolor" style="background-color: #FF69B4;">
+          <input type="button" class="Productcolor" style="background-color: #81FB82;">
+        </td>
+        <td></td>
+        <td>
+          <input type="button" class="Productcolor" style="background-color: #363636;">
+          <input type="button" class="Productcolor" style="background-color: #00B3FF;">
+          <input type="button" class="Productcolor" style="background-color: #FF69B4;">
+          <input type="button" class="Productcolor" style="background-color: #81FB82;">
+        </td>
+        <td></td>
+        <td>
+          <input type="button" class="Productcolor" style="background-color: #363636;">
+          <input type="button" class="Productcolor" style="background-color: #00B3FF;">
+          <input type="button" class="Productcolor" style="background-color: #FF69B4;">
+          <input type="button" class="Productcolor" style="background-color: #81FB82;">
+        </td>
+        <td></td>
+        <td>
+          <input type="button" class="Productcolor" style="background-color: #363636;">
+          <input type="button" class="Productcolor" style="background-color: #00B3FF;">
+          <input type="button" class="Productcolor" style="background-color: #FF69B4;">
+          <input type="button" class="Productcolor" style="background-color: #81FB82;">
+        </td>
+      </tr>
+      <tr class="price">
+        <td><span style="text-decoration: line-through;">80,000원</span><br>64,000원</td><!--  product-1 가격 -->
+        <td></td>
+        <td><span style="text-decoration: line-through;">80,000원</span><br>72,000원</td>
+        <td></td>
+        <td><span style="text-decoration: line-through;">80,000원</span><br>68,000원</td>
+        <td></td>
+        <td><span style="text-decoration: line-through;">80,000원</span><br>72,000원</td>
+      </tr>
+      <tr>
+        <td>후기최고! 꾸준히 사랑받는 데일리한 트렌치코트♡</td> <!--  product-1 설명 -->
+        <td></td>
+        <td>간절기시즌과 잘 어울리는 컬러웨이로 소장가치 UP♥</td>
+        <td></td>
+        <td>간절기 필수! 자주 손이가는 브이넥 니트:)</td>
+        <td></td>
+        <td>슬림하게 떨어지는 일자핏 메이드 슬랙스 :)</td>
+      </tr>
+      <tr class="Icon">
+        <td> <!--  product-1 행사 -->
+          <span style="background-color: black; color: #d2d2d2;">5%DC</span>
+          <span style="background-color: #7ba0fe;color: white;">BEST</span>
+        </td>
+        <td></td>
+        <td>
+          <span style="background-color: #434343; color: #c6c6c6;">UP</span>
+          <span style="background-color: #fe7b91; color: #fecfd7;">WE MADE</span>
+        </td>
+        <td></td>
+        <td>
+          <span style="background-color: #fd294c; color: white;">HIT</span>
+          <span style="background-color: #bcc2dd; color: white;">HOT SALE</span>
+        </td>
+        <td></td>
+        <td>
+          <span style="background-color: #ff2a4e; color: white;">SOLD OUT</span>
+        </td>
+      </tr>
+      <tr class="blank"></tr>
+      <tr>
+        <td class="NewProductImages"><img src="images\product-5.png"></td><!--  product-5 -->
+        <td style="width: 35px;"></td>
+        <td class="NewProductImages"><img src="images\product-6.png"></td>
+        <td style="width: 35px;"></td>
+        <td class="NewProductImages"><img src="images\product-7.png"></td>
+        <td style="width: 35px;"></td>
+        <td class="NewProductImages"><img src="images\product-8.png"></td>
+      </tr>    
+      <tr>
+        <th class="ProductName">감각적 슬랙스-슈즈 (당일발송)</th><!--  product-5 이름 -->
+        <td></td>
+        <th class="ProductName">베이직 D라인 미니 슈즈커트 (주문폭주)</th><!--  product-6 이름 -->
+        <td></td>
+        <th class="ProductName">패턴작살-커브드 체크무늬</th><!--  product-7 이름 -->
+        <td></td>
+        <th class="ProductName">패턴작살-커브드 체크무늬</th><!--  product-8 이름 -->
+      </tr>
+      <tr> 
+        <td><!--  product-5 색상 -->
+          <input type="button" class="Productcolor" style="background-color: #363636;">
+          <input type="button" class="Productcolor" style="background-color: #00B3FF;">
+          <input type="button" class="Productcolor" style="background-color: #FF69B4;">
+          <input type="button" class="Productcolor" style="background-color: #81FB82;">
+        </td>
+        <td></td>
+        <td>
+          <input type="button" class="Productcolor" style="background-color: #363636;">
+          <input type="button" class="Productcolor" style="background-color: #00B3FF;">
+          <input type="button" class="Productcolor" style="background-color: #FF69B4;">
+          <input type="button" class="Productcolor" style="background-color: #81FB82;">
+        </td>
+        <td></td>
+        <td>
+          <input type="button" class="Productcolor" style="background-color: #363636;">
+          <input type="button" class="Productcolor" style="background-color: #00B3FF;">
+          <input type="button" class="Productcolor" style="background-color: #FF69B4;">
+          <input type="button" class="Productcolor" style="background-color: #81FB82;">
+        </td>
+        <td></td>
+        <td>
+          <input type="button" class="Productcolor" style="background-color: #363636;">
+          <input type="button" class="Productcolor" style="background-color: #00B3FF;">
+          <input type="button" class="Productcolor" style="background-color: #FF69B4;">
+          <input type="button" class="Productcolor" style="background-color: #81FB82;">
+        </td>
+      </tr>
+      <tr class="price">
+        <td><span style="text-decoration: line-through;">80,000원</span><br>64,000원</td><!--  product-5 가격 -->
+        <td></td>
+        <td><span style="text-decoration: line-through;">80,000원</span><br>56,000원</td><!--  product-6 가격 -->
+        <td></td>
+        <td><span style="text-decoration: line-through;">80,000원</span><br>64,000원</td><!--  product-7 가격 -->
+        <td></td>
+        <td><span style="text-decoration: line-through;">80,000원</span><br>68,000원</td><!--  product-8 가격 -->
+      </tr>
+      <tr>
+        <td class="ProductName">베이직 D라인 미니 슈즈커트 (주문폭주)</td><!--  product-5 이름 -->
+        <td></td>
+        <td class="ProductName">패턴작살-커브드 체크무늬</td><!--  product-6 이름 -->
+        <td></td>
+        <td class="ProductName">바드린 체크 세렌 - 미니스커트</td><!--  product-7 이름 -->
+        <td></td>
+        <td class="ProductName">[2+1] 모던 슬랙스 - 치마</td><!--  product-8 이름 -->
+      </tr>
+      <tr class="Icon">
+        <td> <!--  product-5 행사 -->
+          <span style="background-color: black; color: white;">20% SALE</span>
+          <span style="background-color: black; color: white;">BEST</span>
+        </td>
+        <td></td>
+        <td>
+          <span style="color: black; border: 1px solid black;">10% SALE</span>
+          <span style="background-color: #444444; color: white;">DELAY</span>
+        </td>
+        <td></td>
+        <td><span style="background-color: #ffc67c;color: white;">GOOD</span>
+          <span style="background-color: #8be0ff;color: white;">NEW SALE</span>
+        </td>
+        <td></td>
+        <td><span style="background-color: #ff516d;color: white;">LOVELY</span>
+          <span style="background-color: #2bc79d;color: white;">NEW</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="footer">
+    <div id="footerMenu" class="Hover">
+      <a href="">HOME</a>
+      <a href="">ABOUT US</a>
+      <a href="">AGREEMENT</a>
+      <a href="" style="font-weight: bold;">PRIVACY POLICY</a>
+      <a href="">GUIDE</a>
+    </div>
+    <h4 style="color: #818181;font-size: smaller;">CUSTOMER CENTER</h4>
+    <b style="font-size:large;">🤙010-6666-3204</b>
+    <p>MON-FRI AM10:00 - PM06:00 (LUNCH PM1:00 - PM2:00)    /    <span style="color: red;">SAT.SUN.HOLIDAY OFF</span><br>
+    국민 123-45678-90-123      우리 89-0123-4567-89    /    예금주 : 윤재성 (세렌디자인)</p>
+    <br>
+    <b>COMPANY INFO</b>
+    <p>
+      COMPANY 세렌디자인 CEO 윤재성 WEB MASTER 윤재성 (serendesign@naver.com)<br>
+      ADDRESS 123456 서울특별시 강남구 삼성로 123 디자인빌딩 11층 BUSINESS LICENSE 219-33-00301 MAIL-ORDER LICENSE 신고준비중<br>
+      COPYRIGHT © Someday_ ALL RIGHT RESERVED. DESIGNED BY SERENDESIGN</p>
+  </div>
+</body>
+</html>

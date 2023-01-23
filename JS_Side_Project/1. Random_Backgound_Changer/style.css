@@ -1,0 +1,15 @@
+#colorName{
+  display: block;
+  text-align: center;
+  font-size: 80px;
+  margin-top: 30%;
+  margin-bottom: 50px;
+}
+input{/*button*/
+  display: block;
+  width:250px;
+  margin:auto;
+  padding: 12px;
+  text-align: center;
+  font-size: 25px;
+}
